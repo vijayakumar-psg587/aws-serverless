@@ -14,7 +14,7 @@ import compress from 'fastify-compress';
 export async function bootstrap(): Promise<FastifyInstance> {
 	let pathOfConfig: string;
 	let app: NestFastifyApplication;
-	console.log('process.env', process.env.NODE_ENV);
+
 	if (process.env.NODE_ENV === 'dev' || process.env.NODE_EN === 'development') {
 		pathOfConfig = path.join(process.cwd(), './config/development/.env');
 		console.log('pathConfig:', pathOfConfig);
@@ -23,13 +23,13 @@ export async function bootstrap(): Promise<FastifyInstance> {
 
 	try {
 		const appConfig = AppConfigService.getAppConfig();
-		console.log('getting appconfig :', appConfig);
+
 		const fastifyInstance = ServerAdapterService.cconfigureInstance();
 		const fastifyAdapter = new FastifyAdapter(fastifyInstance);
 		app = await NestFactory.create<NestFastifyApplication>(AppModule, fastifyAdapter);
 		// Register compression
 		await app.register(compress, { encodings: ['gzip', 'deflate'] });
-		console.log('app create');
+
 		// configure cors
 		await ServerAdapterService.configureCors(fastifyInstance);
 

@@ -7,7 +7,6 @@ export class SampleController {
 
 	@Get()
 	public async getSample(): Promise<unknown> {
-		console.log('getting inside getSample in controller');
-		return JSON.stringify(this.sampleService.returnSample());
+		return this.sampleService.returnSample();
 	}
 }
