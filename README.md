@@ -1,6 +1,7 @@
 -   **DONE**:
 
 Created a simple serverless deployment with nestjs+fastify using serverless framework
+NOTE: This is a sample implementation to test if a HTTP server can be spun inside the serverless. It is not a real worl implementation. Again this might be useful for containerizing serverless
 
 -   **TO BE DONE**
     -   Find out how AWS Secrets engine can be used with serverless framework
