@@ -23,3 +23,12 @@ Created a simple serverless deployment with nestjs+fastify using serverless fram
 
     1. Will have ability to be triggered by an SQS event/Kinesis
     2. Will have the ability to write to Kinesis/DynamoDb
+
+**Steps to deploy:**
+
+-   Verify serverless.yaml file
+-   You can package the code using `serverless package -p ./<path for package file to be present>`
+    Make sure you also have verbose mode enabled `-v` and debug mode **SLS_DEBUG=\***
+-   Now u can test the app with `sls offline` (sls is an alias for serverless command)
+-   You can deploy the code itself using **sls deploy** command with debug mode enabled and -v verbose command
+-   After a successful deployment you will get an output with the endpoint to test
