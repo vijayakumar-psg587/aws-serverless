@@ -32,3 +32,6 @@ Created a simple serverless deployment with nestjs+fastify using serverless fram
 -   Now u can test the app with `sls offline` (sls is an alias for serverless command)
 -   You can deploy the code itself using **sls deploy** command with debug mode enabled and -v verbose command
 -   After a successful deployment you will get an output with the endpoint to test
+
+> [!IMPORTANT]
+> NOTE: Please go through serverless.yaml file for complete understanding. Now this is not the actual use case one might encounter in a real world, but it is a possibility to deploy a REST API as FaaS.

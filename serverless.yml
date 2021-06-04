@@ -77,12 +77,17 @@ provider:
 #         - handler.js
 #    - include-me-dir/**
 
+# Important thing to note now is that now any Proxy requets that have /dev/serverless/api in it
+# will start calling the fastify managed API here. It exposes all endpoints that fastify server exposes. 
+#  We have actually a REST API that will be triggered by HTTP API calls from proxy layer.
+#  Since we have given any type of triggers, so all corresponding endpoints of fastify server can now be used 
+
 functions:
     main:
         handler: src/lambda-entrypoint.handler
         events:
             - http:
-                  method: GET
+                  method: any
                   path: /
                   cors: true
             - http:
